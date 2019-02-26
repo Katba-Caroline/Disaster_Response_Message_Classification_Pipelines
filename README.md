@@ -25,12 +25,12 @@
 * flask
 
 ## Project Description <a name="ProjectDescription"></a>
-Figure Eight Data Set:  [Disaster Response Messages](https://www.figure-eight.com/dataset/combined-disaster-response-data/) proides thousands of messages that have been sorted into 36 catgeories. These messages are sorted into specific categories such as Water, Hospitals, Aid-Related, that are specificaly aimed at helping emergency personnel in their aid efforts.
+Figure Eight Data Set:  [Disaster Response Messages](https://www.figure-eight.com/dataset/combined-disaster-response-data/) provides thousands of messages that have been sorted into 36 categories. These messages are sorted into specific categories such as Water, Hospitals, Aid-Related, that are specifically aimed at helping emergency personnel in their aid efforts.
 
-The main goal of this project is to build an app that can help emergency workers analyze incoming messages and sort them into specific catgeories to speed up aid and contribute to more efficient distribution of people and other resources. 
+The main goal of this project is to build an app that can help emergency workers analyze incoming messages and sort them into specific categories to speed up aid and contribute to more efficient distribution of people and other resources. 
 
 ## File Descriptions <a name="FileDescriptions"></a>
-There are three main foleders:
+There are three main folders:
 
 1. data
     - disaster_categories.csv: dataset including all the categories
@@ -39,16 +39,16 @@ There are three main foleders:
     - DisasterResponse.db: output of the ETL pipeline, i.e. SQLite database containing messages and categories data
 2. models
     - train_classifier.py: machine learning pipeline scripts to train and export a classifier
-    - classifier.pkl: output of the machine learning pipeline, i.e. a trained classifer
+    - classifier.pkl: output of the machine learning pipeline, i.e. a trained classifier
 3. app
     - run.py: Flask file to run the web application
     - templates contains html file for the web application
 
 ## Analysis <a name="Analysis"></a>
-*Data Prepration*
+*Data Preparation*
 - Modify the Category csv; split each category into a separate column
 - Merge Data from the two csv files (messages.csv & categories.csv)
-- remove duplicates and any non-categoried valued
+- remove duplicates and any non-categorized valued
 - create SQL database DisasterResponse.db for the merged data sets
 
 *Text Preprocessing*
@@ -71,19 +71,19 @@ There are three main foleders:
 - Used Joblib as it can be faster. read more [here](https://stackoverflow.com/questions/12615525/what-are-the-different-use-cases-of-joblib-versus-pickle)
 
 ## Results <a name="Results"></a>
-1. Created an ETL pipleline to read data from two csv files, clean data, and save data into a SQLite database.
-2. Created a machine learning pipepline to train a multi-output classifier on the various categories in the dataset.
+1. Created an ETL pipeline to read data from two csv files, clean data, and save data into a SQLite database.
+2. Created a machine learning pipeline to train a multi-output classifier on the various categories in the dataset.
 3. Created a Flask app to show data visualization and classify any message that users would enter on the web page.
 
 ## Future Improvements <a name="FutureImprovements"></a>
-Much of this data was imbalanced, some lables had only a handful inputs. Here are some approaches to improve our model in the future. read more [here](https://machinelearningmastery.com/tactics-to-combat-imbalanced-classes-in-your-machine-learning-dataset/)
-- Change the performance metrics (focus more on Recal and F1-score: weighted average of precision and recall)
+Much of this data was imbalanced, some labels had only a handful inputs. Here are some approaches to improve our model in the future. read more [here](https://machinelearningmastery.com/tactics-to-combat-imbalanced-classes-in-your-machine-learning-dataset/)
+- Change the performance metrics (focus more on Recall and F1-score: weighted average of precision and recall)
 - Generate Synthetic Data
-- Use Different Alogrithms such as multilable algorithms that take into account that lables may be connected and may not be mutually exclusive.
-- Use Penalized Classification Alogrithms
+- Use Different Algorithms such as multilabel algorithms that take into account that labels may be connected and may not be mutually exclusive.
+- Use Penalized Classification Algorithms
 
 ## Licensing, Authors, and Acknowledgements <a name="Licensing"></a>
-Thanks to Udacity for the starter code and FigureEight for provding the data set to be used by this project.
+Thanks to Udacity for the starter code and FigureEight for providing the data set to be used by this project.
 
 
 ## Instructions <a name="Instructions"></a>
