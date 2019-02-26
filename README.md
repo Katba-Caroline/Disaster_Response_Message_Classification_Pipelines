@@ -71,6 +71,9 @@ There are three main foleders:
 - Used Joblib as it can be faster. read more [here](https://stackoverflow.com/questions/12615525/what-are-the-different-use-cases-of-joblib-versus-pickle)
 
 ## Results <a name="Results"></a>
+1. Created an ETL pipleline to read data from two csv files, clean data, and save data into a SQLite database.
+2. Created a machine learning pipepline to train a multi-output classifier on the various categories in the dataset.
+3. Created a Flask app to show data visualization and classify any message that users would enter on the web page.
 
 ## Future Improvements <a name="FutureImprovements"></a>
 Much of this data was imbalanced, some lables had only a handful inputs. Here are some approaches to improve our model in the future. read more [here](https://machinelearningmastery.com/tactics-to-combat-imbalanced-classes-in-your-machine-learning-dataset/)
@@ -88,7 +91,7 @@ Thanks to Udacity for the starter code and FigureEight for provding the data set
 
     - To run ETL pipeline that cleans data and stores in database
         `python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db`
-    - To run ML pipeline that trains classifier and saves
+    - To run ML pipeline that trains classifier and saves model
         `python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl`
 
 2. Run the following command in the app's directory to run your web app.
