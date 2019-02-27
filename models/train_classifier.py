@@ -54,9 +54,10 @@ def load_data(database_filepath):
     Y = df.iloc[:,4:]
     #OR
     #Y = df.drop(['message', 'genre', 'id', 'original'], axis=1)
-    categories = Y.columns.tolist()
+    global category_names
+    category_names = Y.columns.tolist()
     
-    return X, Y, categories
+    return X, Y, category_names
 
 
 #def tokenize(text):
@@ -143,8 +144,9 @@ def evaluate_model(model, X_test, Y_test, category_names):
     # Print out the full classification report and accuracy score
     print(classification_report(Y_test, Y_pred, target_names=category_names))
     print('---------------------------------')
+    #global categories
     for i in range(Y_test.shape[1]):
-        print('Accuracy of %25s: %.2f' %(categories[i], accuracy_score(Y_test.iloc[:, i].values, Y_pred[:,i])))
+        print('Accuracy of %25s: %.2f' %(category_names[i], accuracy_score(Y_test.iloc[:, i].values, Y_pred[:,i])))
 
 
 def save_model(model, model_filepath):
