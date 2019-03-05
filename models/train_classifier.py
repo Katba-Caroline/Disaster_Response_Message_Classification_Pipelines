@@ -63,7 +63,8 @@ def load_data(database_filepath):
 #def tokenize(text):
 #    pass
 
-def clean_text(text, ):
+#def clean_text(text, ):
+def tokenize(text):
     """ A series of nested functions to preprocess the text data
         Functions: 
             Tokenize Text 
@@ -111,7 +112,8 @@ def build_model():
     Returns:
         cv (scikit-learn GridSearchCV): Grid search model object
     """
-    pipeline = Pipeline([('vect', CountVectorizer(tokenizer=clean_text)),
+    #pipeline = Pipeline([('vect', CountVectorizer(tokenizer=clean_text)),
+    pipeline = Pipeline([('vect', CountVectorizer(tokenizer=tokenize)),
                           ('tfidf', TfidfTransformer()),
                           ('clf', MultiOutputClassifier(RandomForestClassifier()))])
     
@@ -166,6 +168,10 @@ def main():
         print('Loading data...\n    DATABASE: {}'.format(database_filepath))
         X, Y, category_names = load_data(database_filepath)
         X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2)
+        
+        #try this here:
+        #print ('Cleaning text...')
+        #model = clean_text()
         
         print('Building model...')
         model = build_model()
