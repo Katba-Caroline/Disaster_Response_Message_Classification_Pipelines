@@ -32,6 +32,7 @@ from sklearn.metrics import classification_report, accuracy_score
 import time
 from pprint import pprint
 import joblib
+import pickle
 ######
 
 def load_data(database_filepath):
@@ -159,7 +160,8 @@ def save_model(model, model_filepath):
     Returns:
         None
     """
-    joblib.dump(model, model_filepath)
+    #joblib.dump(model, model_filepath)
+    pickle.dump(model, open(model_filepath, 'wb'))
 
 
 def main():
