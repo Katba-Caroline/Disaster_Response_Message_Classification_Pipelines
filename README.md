@@ -4,7 +4,7 @@
 
 1. [Libraries](#Libraries)
 2. [Project Description](#ProjectDescription)
-3. [File Descriptions](#FileDescriptions)
+3. [File Description](#FileDescription)
 4. [Analysis](#Analysis)
 5. [Results](#Results)
 6. [Future Improvements](#FutureImprovements)
@@ -29,7 +29,7 @@ Figure Eight Data Set:  [Disaster Response Messages](https://www.figure-eight.co
 
 The main goal of this project is to build an app that can help emergency workers analyze incoming messages and sort them into specific categories to speed up aid and contribute to more efficient distribution of people and other resources. 
 
-## File Descriptions <a name="FileDescriptions"></a>
+## File Description <a name="FileDescription"></a>
 There are three main folders:
 
 1. data
@@ -68,7 +68,7 @@ There are three main folders:
 - Find best parameters
 
 *Export Model as .pkl File*
-- Used Joblib as it can be faster. read more [here](https://stackoverflow.com/questions/12615525/what-are-the-different-use-cases-of-joblib-versus-pickle)
+- You could also use Joblib as it can be faster. read more [here](https://stackoverflow.com/questions/12615525/what-are-the-different-use-cases-of-joblib-versus-pickle)
 
 ## Results <a name="Results"></a>
 1. Created an ETL pipeline to read data from two csv files, clean data, and save data into a SQLite database.
